@@ -3,12 +3,12 @@
   justify-content: space-between;
   width: 40%;
   margin: 10px auto;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 30px;
 }
 .btn {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: black;
   border-style: none;
   margin-left: 15px;
   color: white;

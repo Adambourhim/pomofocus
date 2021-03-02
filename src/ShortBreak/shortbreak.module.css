@@ -1,0 +1,43 @@
+.container {
+  background-color: rgb(70, 142, 145);
+  width: 30%;
+  margin: 50px auto;
+  height: 300px;
+  border-radius: 7px;
+}
+
+.box {
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+.btn {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.box2 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 10px auto;
+  font-size: 100px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.box3 {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+.box3 button {
+  border-style: none;
+  background-color: white;
+  height: 50px;
+  width: 150px;
+  color: rgb(70, 142, 145);
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}

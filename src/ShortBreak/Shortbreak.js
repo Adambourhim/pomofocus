@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "./main.module.css";
-function Main() {
+import styles from "./shortbreak.module.css";
+
+function Shortbreak() {
   const [rung, setRung] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
-  const [timer, setTimer] = useState({ m: 0, s: 6 });
+  const [timer, setTimer] = useState({ m: 5, s: 0 });
   /* useEffect(() => {
     if (rung) {
       const myVar = setInterval(() => {
@@ -36,12 +37,11 @@ function Main() {
     clearInterval(intervalId);
     setRung(0);
   };
-  const stopWatch = () => {};
   return (
     <div className={styles.container}>
       <div className={styles.box}>
         <div className={styles.btn}>Promodoro</div>
-        <div className={styles.btn}>Short Break</div>
+        <div className={styles.btn}>ShortBreak</div>
         <div className={styles.btn}>Long Break</div>
       </div>
 
@@ -62,4 +62,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Shortbreak;
