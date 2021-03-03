@@ -1,5 +1,5 @@
 .container {
-  background-color: rgb(70, 142, 145);
+  background-color: rgb(67, 126, 168);
   width: 30%;
   margin: 50px auto;
   height: 300px;
@@ -38,7 +38,7 @@
   background-color: white;
   height: 50px;
   width: 150px;
-  color: rgb(70, 142, 145);
+  color: rgb(67, 126, 168);
   font-weight: bold;
   font-size: 30px;
   cursor: pointer;

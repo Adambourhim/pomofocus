@@ -1,21 +1,10 @@
-import React, { useState } from "react";
-import styles from "./shortbreak.module.css";
-
+import React, { useState, useEffect } from "react";
+import styles from "./LongBreak.module.css";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-function Shortbreak() {
+function LongBreak() {
   const [rung, setRung] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
-  const [timer, setTimer] = useState({ m: 5, s: 0 });
-  /* useEffect(() => {
-    if (rung) {
-      const myVar = setInterval(() => {
-        setTimer((timer) => timer - 1);
-      }, 1000);
-      setIntervalId(myVar);
-    } else {
-      clearInterval(intervalId);
-    }
-  }, [rung]); */
+  const [timer, setTimer] = useState({ m: 15, s: 0 });
 
   var updateM = timer.m;
   var updateS = timer.s;
@@ -38,6 +27,7 @@ function Shortbreak() {
     clearInterval(intervalId);
     setRung(0);
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.box}>
@@ -69,4 +59,4 @@ function Shortbreak() {
   );
 }
 
-export default Shortbreak;
+export default LongBreak;

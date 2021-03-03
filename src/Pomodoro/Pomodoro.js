@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./pomodoro.module.css";
-
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 function Pomodoro() {
   const [rung, setRung] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [timer, setTimer] = useState({ m: 25, s: 0 });
-  /* useEffect(() => {
-    if (rung) {
-      const myVar = setInterval(() => {
-        setTimer((timer) => timer - 1);
-      }, 1000);
-      setIntervalId(myVar);
-    } else {
-      clearInterval(intervalId);
-    }
-  }, [rung]); */
 
   var updateM = timer.m;
   var updateS = timer.s;
@@ -41,11 +31,15 @@ function Pomodoro() {
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <div className={styles.btn}>Promodoro</div>
-
-        <div className={styles.btn}>Short Break</div>
-
-        <div className={styles.btn}>Long Break</div>
+        <Link className={styles.btn} to="/">
+          Pomodoro
+        </Link>
+        <Link className={styles.btn} to="/ShortBreak">
+          ShortBreak
+        </Link>
+        <Link className={styles.btn} to="/LongBreak">
+          Long Break
+        </Link>
       </div>
 
       <div className={styles.box2}>
