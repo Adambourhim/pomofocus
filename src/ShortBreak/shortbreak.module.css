@@ -43,3 +43,27 @@
   font-size: 30px;
   cursor: pointer;
 }
+.title {
+  display: flex;
+  width: 21%;
+  margin: 60px auto;
+  text-align: center;
+}
+.tasks {
+  display: flex;
+  border-style: none;
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+.container3 {
+  display: flex;
+  justify-content: space-between;
+}
+.points {
+  display: flex;
+  margin-top: 14px;
+  background-color: rgb(70, 142, 145);
+  border-radius: 4px;
+  cursor: pointer;
+}

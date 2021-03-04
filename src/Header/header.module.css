@@ -7,6 +7,10 @@
   font-weight: bold;
   font-size: 30px;
 }
+.hr {
+  width: 40%;
+  margin: 20px auto;
+}
 .btn {
   background-color: black;
   border-style: none;

@@ -1,9 +1,10 @@
 .container {
-  background-color: rgb(219, 82, 77);
+  background-color: rgb(233, 100, 95);
   width: 30%;
   margin: 50px auto;
   height: 300px;
   border-radius: 7px;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 .box {
@@ -38,8 +39,32 @@
   background-color: white;
   height: 50px;
   width: 150px;
-  color: rgb(219, 82, 77);
+  color: rgb(233, 100, 95);
   font-weight: bold;
   font-size: 30px;
+  cursor: pointer;
+}
+.title {
+  display: flex;
+  width: 21%;
+  margin: 60px auto;
+  text-align: center;
+}
+.tasks {
+  display: flex;
+  border-style: none;
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+.container3 {
+  display: flex;
+  justify-content: space-between;
+}
+.points {
+  display: flex;
+  margin-top: 14px;
+  background-color: rgb(219, 82, 77);
+  border-radius: 4px;
   cursor: pointer;
 }
