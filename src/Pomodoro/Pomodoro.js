@@ -32,7 +32,7 @@ function Pomodoro() {
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <Link className={styles.btn} to="/">
+        <Link className={styles.btn} onClick={} to="/">
           Pomodoro
         </Link>
         <Link className={styles.btn} to="/ShortBreak">
