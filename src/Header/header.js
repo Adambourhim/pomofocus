@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
-function header() {
+import { useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+function Header() {
+  const [colors, setColors] = useState("#F0F800");
+  const myArt = { backgroundColor: { colors } };
+  //  "rgb(86, 139, 178)"
+  // "rgb(89, 154, 157)"
+  //console.log(myArt);
+  const { search } = useLocation();
+  console.log(search);
   return (
     <>
       <div className={styles.container}>
@@ -16,4 +25,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

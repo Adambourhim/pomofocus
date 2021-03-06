@@ -28,17 +28,34 @@ function LongBreak() {
     clearInterval(intervalId);
     setRung(0);
   };
+  const changeColor1 = () => {
+    document.body.style.backgroundColor = "rgb(219,82,77)";
+  };
+  const changeColor2 = () => {
+    document.body.style.backgroundColor = "rgb(70, 142, 145)";
+  };
+  const changeColor3 = () => {
+    document.body.style.backgroundColor = "rgb(67, 126, 168)";
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <Link className={styles.btn} to="/">
+        <Link className={styles.btn} to="/" onClick={() => changeColor1()}>
           Pomodoro
         </Link>
-        <Link className={styles.btn} to="/ShortBreak">
+        <Link
+          className={styles.btn}
+          to="/ShortBreak"
+          onClick={() => changeColor2()}
+        >
           ShortBreak
         </Link>
-        <Link className={styles.btn} to="/LongBreak">
+        <Link
+          className={styles.btn}
+          to="/LongBreak"
+          onClick={() => changeColor3()}
+        >
           Long Break
         </Link>
       </div>

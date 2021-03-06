@@ -1,4 +1,4 @@
-import Header from "./Header/header";
+import Header from "./Header/Header";
 import Pomodoro from "./Pomodoro/Pomodoro";
 import ShortBreak from "./ShortBreak/Shortbreak";
 import LongBreak from "./LongBreak/LongBreak";

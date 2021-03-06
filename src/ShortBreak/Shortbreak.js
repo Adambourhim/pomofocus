@@ -6,16 +6,6 @@ function Shortbreak() {
   const [rung, setRung] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [timer, setTimer] = useState({ m: 5, s: 0 });
-  /* useEffect(() => {
-    if (rung) {
-      const myVar = setInterval(() => {
-        setTimer((timer) => timer - 1);
-      }, 1000);
-      setIntervalId(myVar);
-    } else {
-      clearInterval(intervalId);
-    }
-  }, [rung]); */
 
   var updateM = timer.m;
   var updateS = timer.s;
@@ -38,16 +28,33 @@ function Shortbreak() {
     clearInterval(intervalId);
     setRung(0);
   };
+  const changeColor1 = () => {
+    document.body.style.backgroundColor = "rgb(219,82,77)";
+  };
+  const changeColor2 = () => {
+    document.body.style.backgroundColor = "rgb(70, 142, 145)";
+  };
+  const changeColor3 = () => {
+    document.body.style.backgroundColor = "rgb(67, 126, 168)";
+  };
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <Link className={styles.btn} to="/">
+        <Link className={styles.btn} to="/" onClick={() => changeColor1()}>
           Pomodoro
         </Link>
-        <Link className={styles.btn} to="/ShortBreak">
+        <Link
+          className={styles.btn}
+          to="/ShortBreak"
+          onClick={() => changeColor2()}
+        >
           ShortBreak
         </Link>
-        <Link className={styles.btn} to="/LongBreak">
+        <Link
+          className={styles.btn}
+          to="/LongBreak"
+          onClick={() => changeColor3()}
+        >
           Long Break
         </Link>
       </div>

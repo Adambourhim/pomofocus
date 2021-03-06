@@ -28,17 +28,34 @@ function Pomodoro() {
     clearInterval(intervalId);
     setRung(0);
   };
+  const changeColor1 = () => {
+    document.body.style.backgroundColor = "rgb(219,82,77)";
+  };
+  const changeColor2 = () => {
+    document.body.style.backgroundColor = "rgb(70, 142, 145)";
+  };
+  const changeColor3 = () => {
+    document.body.style.backgroundColor = "rgb(67, 126, 168)";
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <Link className={styles.btn} onClick={} to="/">
+        <Link className={styles.btn} onClick={() => changeColor1()} to="/">
           Pomodoro
         </Link>
-        <Link className={styles.btn} to="/ShortBreak">
+        <Link
+          className={styles.btn}
+          onClick={() => changeColor2()}
+          to="/ShortBreak"
+        >
           ShortBreak
         </Link>
-        <Link className={styles.btn} to="/LongBreak">
+        <Link
+          className={styles.btn}
+          onClick={() => changeColor3()}
+          to="/LongBreak"
+        >
           Long Break
         </Link>
       </div>
