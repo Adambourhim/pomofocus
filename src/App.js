@@ -1,4 +1,3 @@
-import Header from "./Header/Header";
 import Pomodoro from "./Pomodoro/Pomodoro";
 import ShortBreak from "./ShortBreak/Shortbreak";
 import LongBreak from "./LongBreak/LongBreak";
@@ -7,7 +6,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
         <Route exact path="/" component={Pomodoro} />
         <Route path="/ShortBreak" component={ShortBreak} />
         <Route path="/LongBreak" component={LongBreak} />
