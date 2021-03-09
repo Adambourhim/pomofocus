@@ -5,8 +5,8 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Animated } from "react-animated-css";
 import { BsToggleOff } from "react-icons/bs";
 import { BsToggleOn } from "react-icons/bs";
-import { GrFormUp } from "react-icons/gr";
-import { GrFormDown } from "react-icons/gr";
+import { AiFillCaretUp } from "react-icons/ai";
+import { AiFillCaretDown } from "react-icons/ai";
 
 function Pomodoro() {
   const [rung, setRung] = useState(0);
@@ -137,11 +137,11 @@ function Pomodoro() {
                 <div className={styles.Ainput}>
                   <p className={styles.counter}>{counter0}</p>
                   <div className={styles.upDown}>
-                    <GrFormUp
+                    <AiFillCaretUp
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter0(counter0 + 1)}
                     />
-                    <GrFormDown
+                    <AiFillCaretDown
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter0(counter0 - 1)}
                     />
@@ -153,11 +153,11 @@ function Pomodoro() {
                 <div className={styles.Ainput}>
                   <p className={styles.counter}>{counter2}</p>
                   <div className={styles.upDown}>
-                    <GrFormUp
+                    <AiFillCaretUp
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter2(counter2 + 1)}
                     />
-                    <GrFormDown
+                    <AiFillCaretDown
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter2(counter2 - 1)}
                     />
@@ -169,11 +169,11 @@ function Pomodoro() {
                 <div className={styles.Ainput}>
                   <p className={styles.counter}>{counter1}</p>
                   <div className={styles.upDown}>
-                    <GrFormUp
+                    <AiFillCaretUp
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter1(counter1 + 1)}
                     />
-                    <GrFormDown
+                    <AiFillCaretDown
                       style={{ cursor: "pointer" }}
                       onClick={() => setCounter1(counter1 - 1)}
                     />
@@ -204,11 +204,11 @@ function Pomodoro() {
               <div className={styles.Ainput}>
                 <p className={styles.counter}>{counter3}</p>
                 <div className={styles.upDown}>
-                  <GrFormUp
+                  <AiFillCaretUp
                     style={{ cursor: "pointer" }}
                     onClick={() => setCounter3(counter3 + 1)}
                   />
-                  <GrFormDown
+                  <AiFillCaretDown
                     style={{ cursor: "pointer" }}
                     onClick={() => setCounter3(counter3 - 1)}
                   />
