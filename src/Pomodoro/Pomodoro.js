@@ -7,7 +7,7 @@ import { BsToggleOff } from "react-icons/bs";
 import { BsToggleOn } from "react-icons/bs";
 import { AiFillCaretUp } from "react-icons/ai";
 import { AiFillCaretDown } from "react-icons/ai";
-
+import { HiOutlineX } from "react-icons/hi";
 function Pomodoro() {
   const [rung, setRung] = useState(0);
   const [rung2, setRung2] = useState(0);
@@ -128,7 +128,11 @@ function Pomodoro() {
           isVisible={anim ? true : false}
         >
           <div className={styles.Panim}>
-            <div className={styles.titleS}>TIMER SETTINGS</div>
+            <div className={styles.cloes}>
+              <div className={styles.titleS}>TIMER SETTINGS</div>
+              <HiOutlineX />
+            </div>
+
             <hr className={styles.Ahr} />
             <div className={styles.secondT}>Time (minutes)</div>
             <div className={styles.container5}>
@@ -201,7 +205,7 @@ function Pomodoro() {
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Long Break interval
-              <div className={styles.Ainput}>
+              <div className={styles.Ainput3}>
                 <p className={styles.counter}>{counter3}</p>
                 <div className={styles.upDown}>
                   <AiFillCaretUp
@@ -216,9 +220,29 @@ function Pomodoro() {
               </div>
             </div>
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Alarm Volume</div>
+            <div className={styles.diVolum}>
+              <div className={styles.secondT2}>Alarm Volume</div>
+              <input className={styles.volum} type="range" min="1" max="100" />
+            </div>
+
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Ticking Sound</div>
+            <div className={styles.combo}>
+              <div className={styles.secondT2}>Ticking Sound</div>
+              <div className={styles.comboV}>
+                <select name="example" className={styles.selectcom}>
+                  <option value="A">None</option>
+                  <option value="B">Ticking Fast</option>
+                  <option value="-">Ticking Slow</option>
+                </select>
+                <input
+                  className={styles.volum}
+                  type="range"
+                  min="1"
+                  max="100"
+                />
+              </div>
+            </div>
+
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Dark Mode when running
@@ -237,7 +261,14 @@ function Pomodoro() {
               )}
             </div>
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Notification</div>
+            <div className={styles.notif}>
+              <div className={styles.secondT2}>Notification</div>
+              <select name="example" className={styles.selectcom}>
+                <option value="A">Last</option>
+                <option value="B">Every</option>
+              </select>
+            </div>
+
             <div className={styles.footer}>
               <button className={styles.btnOK}>OK</button>
             </div>
