@@ -3,12 +3,22 @@ import styles from "./LongBreak.module.css";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Animated } from "react-animated-css";
+import { BsToggleOff } from "react-icons/bs";
+import { BsToggleOn } from "react-icons/bs";
+import { AiFillCaretUp } from "react-icons/ai";
+import { AiFillCaretDown } from "react-icons/ai";
+import { HiOutlineX } from "react-icons/hi";
 
 function LongBreak() {
   const [rung, setRung] = useState(0);
+  const [rung2, setRung2] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [timer, setTimer] = useState({ m: 15, s: 0 });
   const [anim, setAnim] = useState(false);
+  const [counter0, setCounter0] = useState(25);
+  const [counter1, setCounter1] = useState(15);
+  const [counter2, setCounter2] = useState(5);
+  const [counter3, setCounter3] = useState(4);
 
   var updateM = timer.m;
   var updateS = timer.s;
@@ -113,40 +123,150 @@ function LongBreak() {
           isVisible={anim ? true : false}
         >
           <div className={styles.Panim}>
-            <div className={styles.titleS}>TIMER SETTINGS</div>
+            <div className={styles.cloes}>
+              <div className={styles.titleS}>TIMER SETTINGS</div>
+              <HiOutlineX />
+            </div>
+
             <hr className={styles.Ahr} />
             <div className={styles.secondT}>Time (minutes)</div>
             <div className={styles.container5}>
               <div>
                 Promodoro
-                <input className={styles.Ainput} placeholder="25" />
+                <div className={styles.Ainput}>
+                  <p className={styles.counter}>{counter0}</p>
+                  <div className={styles.upDown}>
+                    <AiFillCaretUp
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter0(counter0 + 1)}
+                    />
+                    <AiFillCaretDown
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter0(counter0 - 1)}
+                    />
+                  </div>
+                </div>
               </div>
-              <div>
+              <div className={styles.divCounter}>
                 Short Break
-                <input className={styles.Ainput} placeholder="5" />
+                <div className={styles.Ainput}>
+                  <p className={styles.counter}>{counter2}</p>
+                  <div className={styles.upDown}>
+                    <AiFillCaretUp
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter2(counter2 + 1)}
+                    />
+                    <AiFillCaretDown
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter2(counter2 - 1)}
+                    />
+                  </div>
+                </div>
               </div>
-              <div>
+              <div className={styles.divCounter}>
                 Long Break
-                <input className={styles.Ainput} placeholder="15" />
+                <div className={styles.Ainput}>
+                  <p className={styles.counter}>{counter1}</p>
+                  <div className={styles.upDown}>
+                    <AiFillCaretUp
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter1(counter1 + 1)}
+                    />
+                    <AiFillCaretDown
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setCounter1(counter1 - 1)}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Auto start next round?</div>
+            <div className={styles.secondT2}>
+              Auto start next round?
+              {rung == 0 ? (
+                <BsToggleOff
+                  size="50px"
+                  style={{ marginTop: "-16px", cursor: "pointer" }}
+                  onClick={() => setRung(1)}
+                />
+              ) : (
+                <BsToggleOn
+                  size="50px"
+                  style={{ marginTop: "-16px", cursor: "pointer" }}
+                  onClick={() => setRung(0)}
+                />
+              )}
+            </div>
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Long Break interval
-              <input className={styles.Ainput2} placeholder="4" />
+              <div className={styles.Ainput3}>
+                <p className={styles.counter}>{counter3}</p>
+                <div className={styles.upDown}>
+                  <AiFillCaretUp
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setCounter3(counter3 + 1)}
+                  />
+                  <AiFillCaretDown
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setCounter3(counter3 - 1)}
+                  />
+                </div>
+              </div>
             </div>
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Alarm Volume</div>
+            <div className={styles.diVolum}>
+              <div className={styles.secondT2}>Alarm Volume</div>
+              <input className={styles.volum} type="range" min="1" max="100" />
+            </div>
+
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Ticking Sound</div>
+            <div className={styles.combo}>
+              <div className={styles.secondT2}>Ticking Sound</div>
+              <div className={styles.comboV}>
+                <select name="example" className={styles.selectcom}>
+                  <option value="A">None</option>
+                  <option value="B">Ticking Fast</option>
+                  <option value="-">Ticking Slow</option>
+                </select>
+                <input
+                  className={styles.volum}
+                  type="range"
+                  min="1"
+                  max="100"
+                />
+              </div>
+            </div>
+
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Ticking Sound</div>
+            <div className={styles.secondT2}>
+              Dark Mode when running
+              {rung2 == 0 ? (
+                <BsToggleOff
+                  size="50px"
+                  style={{ marginTop: "-16px", cursor: "pointer" }}
+                  onClick={() => setRung2(1)}
+                />
+              ) : (
+                <BsToggleOn
+                  size="50px"
+                  style={{ marginTop: "-16px", cursor: "pointer" }}
+                  onClick={() => setRung2(0)}
+                />
+              )}
+            </div>
             <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Dark Mode when running</div>
-            <hr className={styles.Ahr3} />
-            <div className={styles.secondT2}>Notification</div>
+            <div className={styles.notif}>
+              <div className={styles.secondT2}>Notification</div>
+              <select name="example" className={styles.selectcom}>
+                <option value="A">Last</option>
+                <option value="B">Every</option>
+              </select>
+            </div>
+
+            <div className={styles.footer}>
+              <button className={styles.btnOK}>OK</button>
+            </div>
           </div>
         </Animated>
       </div>
