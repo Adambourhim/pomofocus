@@ -18,7 +18,7 @@ function Pomodoro() {
   const [counter1, setCounter1] = useState(15);
   const [counter2, setCounter2] = useState(5);
   const [counter3, setCounter3] = useState(4);
-
+  const [runSt, setRunSt] = useState(false);
   var updateM = timer.m;
   var updateS = timer.s;
 
@@ -96,7 +96,7 @@ function Pomodoro() {
         </div>
 
         <div className={styles.Pbox2}>
-          {timer.m >= 10 ? timer.m : "0" + timer.m} :
+          {timer.m >= 10 ? timer.m : "0" + timer.m}:
           {timer.s >= 10 ? timer.s : "0" + timer.s}
         </div>
         <div className={styles.Pbox3}>
