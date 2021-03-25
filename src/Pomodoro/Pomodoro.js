@@ -58,7 +58,7 @@ function Pomodoro() {
   return (
     <>
       <div className={styles.container}>
-        <div>Promofocus</div>
+        <div className={styles.logo}>Promofocus</div>
 
         <div className={styles.box}>
           <button className={styles.btn}>Report</button>
