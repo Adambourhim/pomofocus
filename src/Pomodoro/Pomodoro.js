@@ -8,12 +8,15 @@ import { BsToggleOn } from "react-icons/bs";
 import { AiFillCaretUp } from "react-icons/ai";
 import { AiFillCaretDown } from "react-icons/ai";
 import { HiOutlineX } from "react-icons/hi";
+import { FcGoogle } from "react-icons/fc";
+import { CgMail } from "react-icons/cg";
 function Pomodoro() {
   const [rung, setRung] = useState(0);
   const [rung2, setRung2] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [timer, setTimer] = useState({ m: 25, s: 0 });
   const [anim, setAnim] = useState(false);
+  const [anim2, setAnim2] = useState(false);
   const [counter0, setCounter0] = useState(25);
   const [counter1, setCounter1] = useState(15);
   const [counter2, setCounter2] = useState(5);
@@ -54,7 +57,7 @@ function Pomodoro() {
   const changeColor3 = () => {
     document.body.style.backgroundColor = "rgb(67, 126, 168)";
   };
-
+  console.log(timer.m);
   return (
     <>
       <div className={styles.container}>
@@ -70,7 +73,15 @@ function Pomodoro() {
           >
             Setting
           </button>
-          <button className={styles.btn}>Login</button>
+          <button
+            className={styles.btn}
+            className={styles.btn}
+            onClick={() => {
+              anim2 ? setAnim2(false) : setAnim2(true);
+            }}
+          >
+            Login
+          </button>
         </div>
       </div>
       <hr className={styles.Phr} />
@@ -79,13 +90,17 @@ function Pomodoro() {
           <Link className={styles.Pbtn} onClick={() => changeColor1()} to="/">
             Pomodoro
           </Link>
+
           <Link
             className={styles.Pbtn}
-            onClick={() => changeColor2()}
+            onClick={() => {
+              changeColor2();
+            }}
             to="/ShortBreak"
           >
             ShortBreak
           </Link>
+
           <Link
             className={styles.Pbtn}
             onClick={() => changeColor3()}
@@ -99,6 +114,7 @@ function Pomodoro() {
           {timer.m >= 10 ? timer.m : "0" + timer.m}:
           {timer.s >= 10 ? timer.s : "0" + timer.s}
         </div>
+
         <div className={styles.Pbox3}>
           <button>
             {rung == 0 ? (
@@ -119,11 +135,31 @@ function Pomodoro() {
         </div>
 
         <hr />
+        <Animated
+          animationIn="zoomIn"
+          animationOut="zoomOut"
+          animationInDuration={500}
+          animationOutDuration={0}
+          isVisible={anim2 ? true : false}
+        >
+          <div className={styles.Panim2}>
+            <div className={styles.contact}>
+              <FcGoogle />
+              <div className={styles.login}>Login With Google</div>
+            </div>
+
+            <hr />
+            <div className={styles.contact}>
+              <CgMail />
+              <div className={styles.login}>Login With Email</div>
+            </div>
+          </div>
+        </Animated>
 
         <Animated
           animationIn="zoomIn"
           animationOut="zoomOut"
-          animationInDuration={1000}
+          animationInDuration={800}
           animationOutDuration={0}
           isVisible={anim ? true : false}
         >
