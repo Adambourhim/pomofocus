@@ -270,7 +270,14 @@ function Pomodoro() {
             </div>
 
             <div className={styles.footer}>
-              <button className={styles.btnOK}>OK</button>
+              <button
+                className={styles.btnOK}
+                onClick={() => {
+                  anim ? setAnim(false) : setAnim(true);
+                }}
+              >
+                OK
+              </button>
             </div>
           </div>
         </Animated>
