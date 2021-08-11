@@ -1,7 +1,7 @@
 import Pomodoro from "./Pomodoro/Pomodoro";
 import ShortBreak from "./ShortBreak/Shortbreak";
 import LongBreak from "./LongBreak/LongBreak";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 function App() {
   return (
     <Router>

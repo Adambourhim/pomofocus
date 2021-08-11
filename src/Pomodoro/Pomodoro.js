@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./pomodoro.module.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Animated } from "react-animated-css";
 import { BsToggleOff } from "react-icons/bs";
@@ -21,12 +21,12 @@ function Pomodoro() {
   const [counter1, setCounter1] = useState(15);
   const [counter2, setCounter2] = useState(5);
   const [counter3, setCounter3] = useState(4);
-  // const [runSt, setRunSt] = useState(false);
+  const [runSt, setRunSt] = useState(false);
   var updateM = timer.m;
   var updateS = timer.s;
 
   const run = () => {
-    if (updateM === 0 && updateS === 0) {
+    if (updateM == 0 && updateS == 0) {
       clearInterval(intervalId);
       setRung(0);
       return;
@@ -75,6 +75,7 @@ function Pomodoro() {
           </button>
           <button
             className={styles.btn}
+            className={styles.btn}
             onClick={() => {
               anim2 ? setAnim2(false) : setAnim2(true);
             }}
@@ -116,7 +117,7 @@ function Pomodoro() {
 
         <div className={styles.Pbox3}>
           <button>
-            {rung === 0 ? (
+            {rung == 0 ? (
               <span onClick={() => start()}>STAR</span>
             ) : (
               <span onClick={() => stop()}>STOP</span>
@@ -223,7 +224,7 @@ function Pomodoro() {
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Auto start next round?
-              {rung === 0 ? (
+              {rung == 0 ? (
                 <BsToggleOff
                   size="50px"
                   style={{ marginTop: "-16px", cursor: "pointer" }}
@@ -281,7 +282,7 @@ function Pomodoro() {
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Dark Mode when running
-              {rung2 === 0 ? (
+              {rung2 == 0 ? (
                 <BsToggleOff
                   size="50px"
                   style={{ marginTop: "-16px", cursor: "pointer" }}
