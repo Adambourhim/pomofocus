@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./shortbreak.module.css";
 import { HiOutlineDotsVertical } from "react-icons/hi";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
 import { BsToggleOff } from "react-icons/bs";
 import { BsToggleOn } from "react-icons/bs";
@@ -95,7 +95,7 @@ function Shortbreak() {
         </div>
         <div className={styles.box3}>
           <button>
-            {rung == 0 ? (
+            {rung === 0 ? (
               <span onClick={() => start()}>STAR</span>
             ) : (
               <span onClick={() => stop()}>STOP</span>
@@ -181,7 +181,7 @@ function Shortbreak() {
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Auto start next round?
-              {rung == 0 ? (
+              {rung === 0 ? (
                 <BsToggleOff
                   size="50px"
                   style={{ marginTop: "-16px", cursor: "pointer" }}
@@ -239,7 +239,7 @@ function Shortbreak() {
             <hr className={styles.Ahr3} />
             <div className={styles.secondT2}>
               Dark Mode when running
-              {rung2 == 0 ? (
+              {rung2 === 0 ? (
                 <BsToggleOff
                   size="50px"
                   style={{ marginTop: "-16px", cursor: "pointer" }}
