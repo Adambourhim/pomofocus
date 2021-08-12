@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./LongBreak.module.css";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Animated } from "react-animated-css";
 import { BsToggleOff } from "react-icons/bs";
